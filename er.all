@@ -1,0 +1,32 @@
+=> [[32m#<Review:0x00007fd2c7003128[0m
+  id: [1;34m1[0m,
+  star_rating: [1;34m4[0m,
+  comment:
+   [31m[1;31m"[0m[31mMy family loves this cereal. It snaps, crackles, and pops just like the original Rice Krispies. It's too bad they changed the recipe though. The old Cocoa Krispies was so much better[1;31m"[0m[31m[0m,
+  header: [31m[1;31m"[0m[31mAbsolutely cocoa-licious![1;31m"[0m[31m[0m,
+  cereal_id: [1;34m1[0m,
+  user_id: [1;34m1[0m[32m>[0m,
+ [32m#<Review:0x00007fd2c6f81bc8[0m
+  id: [1;34m2[0m,
+  star_rating: [1;34m4[0m,
+  comment:
+   [31m[1;31m"[0m[31mThis cereal was so good, I ate two bowls in one sitting. I loved the sweetness of it. The crunch of the flakes. I have never seen zucaritas before and I found my new go to morning cereal. I highly recommend this cereal for all[1;31m"[0m[31m[0m,
+  header: [31m[1;31m"[0m[31mDelicious crunch[1;31m"[0m[31m[0m,
+  cereal_id: [1;34m2[0m,
+  user_id: [1;34m2[0m[32m>[0m,
+ [32m#<Review:0x00007fd2c6f86cb8[0m
+  id: [1;34m3[0m,
+  star_rating: [1;34m5[0m,
+  comment:
+   [31m[1;31m"[0m[31mCorn Flakes is a comfort food for me. The corn flavor and the crunch is all I need to have a happy day. It's also a go to when I'm not feeling well.[1;31m"[0m[31m[0m,
+  header: [31m[1;31m"[0m[31mMy all time favorite[1;31m"[0m[31m[0m,
+  cereal_id: [1;34m3[0m,
+  user_id: [1;34m2[0m[32m>[0m,
+ [32m#<Review:0x00007fd2c6f85b88[0m
+  id: [1;34m4[0m,
+  star_rating: [1;34m5[0m,
+  comment:
+   [31m[1;31m"[0m[31mI buy Raisin Bran cereal on a regular basis. It tastes delicious and extremely healthy. High in fiber.[1;31m"[0m[31m[0m,
+  header: [31m[1;31m"[0m[31mWonderful[1;31m"[0m[31m[0m,
+  cereal_id: [1;34m4[0m,
+  user_id: [1;34m2[0m[32m>[0m]

@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState, useEffect} from 'react';
 
 function App() {
+
+const [reviews, setReviews] = useState([])
+
+useEffect(() =>{
+fetch("http://localhost:9292/reviews")
+.then(response => response.json())
+.then(setReviews)
+
+},[])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn Reac
-        </a>
-      </header>
-    </div>
-  );
+<div>
+
+</div>
+  )
 }
 
 export default App;
