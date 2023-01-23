@@ -13,13 +13,16 @@
 ActiveRecord::Schema.define(version: 2023_01_23_155724) do
 
   create_table "cereals", force: :cascade do |t|
-    t.integer "value"
     t.string "cereal_name"
+    t.string "image_url"
+    t.string "brand"
+    t.string "highlights"
   end
 
   create_table "reviews", force: :cascade do |t|
+    t.integer "star_rating"
     t.string "comment"
-    t.integer "reviewed"
+    t.string "header"
     t.integer "cereal_id"
     t.integer "user_id"
   end
