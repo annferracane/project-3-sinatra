@@ -17,7 +17,7 @@ class ApplicationController < Sinatra::Base
   patch "/reviews/:id" do
     review = Review.find(params[:id])
     review.update(body: params[:body])
-    review.to_json
+    review
   end
 
   # User Routes
@@ -35,12 +35,6 @@ class ApplicationController < Sinatra::Base
   get "/cereals/:id" do
     cereals = Cereal.find(params[:id])
     cereals.to_json(include: {reviews: {include: [:user]}})
-  end
-
-  patch "/cereals/:id" do
-    cereal = Cereal.find(params[:id])
-    cereal.update(body: params[:body])
-    cereal.to_json
   end
 
 end

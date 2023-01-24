@@ -38,9 +38,9 @@ class ApplicationController < Sinatra::Base
   end
 
   patch "/cereals/:id" do
-    cereal = Cereal.find(params[:id])
-    cereal.update(body: params[:body])
-    cereal.to_json
+    review = Review.find(params[:id])
+    review.update(body: params[:body])
+    review.to_json
   end
 
 end
