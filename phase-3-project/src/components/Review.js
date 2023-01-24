@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Review({ review }) {
     return (
@@ -9,10 +10,7 @@ function Review({ review }) {
             <p><b>Cereal: </b>{ review.cereal.cereal_name }</p>
             <h3 className="fs-2">{ review.header }</h3>
             <p>{ review.comment }</p>
-            <a href="#" className="icon-link d-inline-flex align-items-center">
-            Learn More
-            <svg className="bi" width="1em" height="1em"><use xlinkHref="#chevron-right"></use></svg>
-            </a>
+            <Link className="btn btn-primary" type="button" to={`/new-review`}>Review</Link>
         </div>
     )
 }

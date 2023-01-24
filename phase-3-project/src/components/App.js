@@ -4,6 +4,7 @@ import NavBar from './NavBar';
 import Main from './Main';
 import Reviews from './Reviews';
 import NewReview from './NewReview';
+import CerealDetail from './CerealDetail';
 
 function App() {
   const baseURL = "http://localhost:9292";
@@ -40,6 +41,7 @@ function App() {
         <Route exact path="/" element={<><Main cereals={ cereals }/></>} />
         <Route path="/reviews" element={<><Reviews reviews={ reviews }/></>} />
         <Route path="/new-review" element={<><NewReview /></>} />
+        <Route path="/cereals/:id" element={<><CerealDetail cereal={ cereals }/></>} />
       </Routes>
     </div>
   )
