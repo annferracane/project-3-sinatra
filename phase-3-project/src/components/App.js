@@ -44,7 +44,8 @@ function App() {
       <Routes>
         <Route exact path="/" element={<><Main cereals={ cereals }/></>} />
         <Route path="/reviews" element={<><Reviews reviews={ reviews }/></>} />
-        <Route path="/new-review" element={<><NewReview addNewReview={ addNewReview }/></>} />
+        <Route path="/new-review" element={<><NewReview cereals={ cereals } addNewReview={ addNewReview }/></>} />
+        <Route path="/new-review/:id" element={<><NewReview cereals={ cereals } addNewReview={ addNewReview }/></>} />
         <Route path="/cereals/:id" element={<><CerealDetail cereal={ cereals }/></>} />
       </Routes>
     </div>

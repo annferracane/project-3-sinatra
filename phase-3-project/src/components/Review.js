@@ -10,7 +10,7 @@ function Review({ review }) {
             <p><b>Cereal: </b>{ review.cereal.cereal_name }</p>
             <h3 className="fs-2">{ review.header }</h3>
             <p>{ review.comment }</p>
-            <Link className="btn btn-primary" type="button" to={`/new-review`}>Review</Link>
+            <Link className="btn btn-primary" type="button" to={`/new-review/${review.cereal.id}`}>Review</Link>
         </div>
     )
 }
