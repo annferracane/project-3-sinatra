@@ -4,17 +4,12 @@ class ApplicationController < Sinatra::Base
   # Add your routes here
   get "/reviews" do
     reviews = Review.all
-    reviews.to_json(include: [:cereal, :user])
+    reviews.to_json(include: []:cereal)
   end
 
   get "/users" do
     users = User.all
     users.to_json(include: {reviews: {include: [:cereal]}})
-  end
-
-  get "/cereals" do
-    cereals = Cereal.all
-    cereals.to_json(include: {reviews: {include: [:user]}})
   end
 
 

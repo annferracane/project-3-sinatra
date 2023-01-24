@@ -12,9 +12,9 @@ class ApplicationController < Sinatra::Base
     users.to_json(include: {reviews: {include: [:cereal]}})
   end
 
-  get "/cereals" do
-    cereals = Cereal.all
-    cereals.to_json(include: {reviews: {include: [:user]}})
+  get "/users" do
+    users = User.all
+    users.to_json(include: {reviews: {include: [:cereal]}})
   end
 
 

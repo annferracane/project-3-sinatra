@@ -14,7 +14,7 @@ class ApplicationController < Sinatra::Base
 
   get "/cereals" do
     cereals = Cereal.all
-    cereals.to_json(include: {reviews: {include: [:user]}})
+    users.to_json(include: {reviews: {include: [:cereal]}})
   end
 
 
