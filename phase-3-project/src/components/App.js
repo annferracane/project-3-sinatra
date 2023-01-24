@@ -34,13 +34,17 @@ function App() {
     .then(users => setUsers(users))
   },[])
 
+  function addNewReview(mynewReview){
+    setReviews([...reviews, mynewReview])
+  }
+
   return (
     <div className="App">
       <NavBar />
       <Routes>
         <Route exact path="/" element={<><Main cereals={ cereals }/></>} />
         <Route path="/reviews" element={<><Reviews reviews={ reviews }/></>} />
-        <Route path="/new-review" element={<><NewReview /></>} />
+        <Route path="/new-review" element={<><NewReview addNewReview={ addNewReview }/></>} />
         <Route path="/cereals/:id" element={<><CerealDetail cereal={ cereals }/></>} />
       </Routes>
     </div>
