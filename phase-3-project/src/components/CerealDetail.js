@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Reviews from './Reviews';
 
-function CerealDetail() {
+function CerealDetail({ reviews }) {
     const [cereal, setCereal] = useState(null);
     const params = useParams();
     const id = params.id;
@@ -13,7 +13,7 @@ function CerealDetail() {
         .then(resp => resp.json())
         .then(cereal => setCereal(cereal))
         .catch(e => console.log(e));
-    }, [id]);
+    }, [id, reviews]);
 
      // Show loading if cereal is null
      if(!cereal) { return <h2>Loading...</h2> }

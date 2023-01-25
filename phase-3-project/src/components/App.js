@@ -1,5 +1,6 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import { Routes, Route } from "react-router-dom";
+import { UserProvider } from "../context/user";
 import NavBar from './NavBar';
 import Cereals from './Cereals';
 import Reviews from './Reviews';
@@ -25,7 +26,7 @@ function App() {
     fetch(`${baseURL}/cereals`)
     .then(resp => resp.json())
     .then(cereals => setCereals(cereals))
-  },[])
+  },[reviews])
 
   // Users
   useEffect(() =>{
@@ -38,16 +39,23 @@ function App() {
     setReviews([...reviews, mynewReview])
   }
 
+  function deleteReview(reviewId) {
+    const newReviews = reviews.filter(review => review.id != reviewId)
+    setReviews(newReviews);
+  }
+
   return (
     <div className="App">
-      <NavBar />
-      <Routes>
-        <Route exact path="/" element={<><Cereals cereals={ cereals }/></>} />
-        <Route path="/reviews" element={<><Reviews reviews={ reviews }/></>} />
-        <Route path="/new-review" element={<><NewReview cereals={ cereals } addNewReview={ addNewReview }/></>} />
-        <Route path="/new-review/:id" element={<><NewReview cereals={ cereals } addNewReview={ addNewReview }/></>} />
-        <Route path="/cereals/:id" element={<><CerealDetail cereal={ cereals }/></>} />
-      </Routes>
+      <UserProvider>
+        <NavBar users={ users }/>
+        <Routes>
+          <Route path={"/"} element={<><Cereals cereals={ cereals }/></>} />
+          <Route path={"/reviews"} element={<><Reviews reviews={ reviews } deleteReview={ deleteReview }/></>} />
+          <Route path={"/new-review"} element={<><NewReview cereals={ cereals } addNewReview={ addNewReview }/></>} />
+          <Route path={"/new-review/:id"} element={<><NewReview cereals={ cereals } addNewReview={ addNewReview }/></>} />
+          <Route path={"/cereals/:id"} element={<><CerealDetail cereal={ cereals } reviews={ reviews }/></>} />
+        </Routes>
+      </UserProvider>
     </div>
   )
 }
