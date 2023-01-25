@@ -40,7 +40,15 @@ function App() {
   }
 
   function deleteReview(reviewId) {
-    const newReviews = reviews.filter(review => review.id != reviewId)
+    console.log("delete review called");
+    const newReviews = reviews.filter(review => review.id !== reviewId);
+    setReviews(newReviews);
+    return 200;
+  }
+
+  function editReview(editedReview) {
+    const editedReviews = reviews.filter(review => review.id !== editedReview.id);
+    const newReviews = [...editedReviews, editedReview];
     setReviews(newReviews);
   }
 
@@ -50,7 +58,7 @@ function App() {
         <NavBar users={ users }/>
         <Routes>
           <Route path={"/"} element={<><Cereals cereals={ cereals }/></>} />
-          <Route path={"/reviews"} element={<><Reviews reviews={ reviews } deleteReview={ deleteReview }/></>} />
+          <Route path={"/reviews"} element={<><Reviews reviews={ reviews } deleteReview={ deleteReview } editReview={ editReview }/></>} />
           <Route path={"/new-review"} element={<><NewReview cereals={ cereals } addNewReview={ addNewReview }/></>} />
           <Route path={"/new-review/:id"} element={<><NewReview cereals={ cereals } addNewReview={ addNewReview }/></>} />
           <Route path={"/cereals/:id"} element={<><CerealDetail cereal={ cereals } reviews={ reviews }/></>} />

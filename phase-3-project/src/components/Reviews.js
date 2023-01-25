@@ -1,9 +1,9 @@
 import React from "react";
 import Review from "./Review";
 
-function Reviews({ reviews, deleteReview }) {
+function Reviews({ reviews, deleteReview, editReview }) {
 
-    const reviewArray = reviews.map(review => <Review key={ review.id } review={ review } deleteReview={ deleteReview }/>)
+    const reviewArray = reviews.map(review => <Review key={ review.id } review={ review } deleteReview={ deleteReview } editReview={ editReview }/>)
 
     return (
         <div className="container px-4 py-5" id="featured-3">

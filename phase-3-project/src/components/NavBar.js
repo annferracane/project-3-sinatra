@@ -3,8 +3,8 @@ import { NavLink } from "react-router-dom";
 import { UserContext } from "../context/user";
 
 function NavBar({ users }) {
-    const [userId, setUserId] = useState();
     const { user, setUser } = useContext(UserContext);
+    const [userId, setUserId] = useState(user ? user.id : 0);
 
     const userArray = users.map(u => <option key={ u.id } value={ `${u.id}` }>{ u.email }</option>)
 
@@ -27,7 +27,8 @@ function NavBar({ users }) {
                 <option value="0" >Who are you?</option>
                 { userArray }
             </select>
-            <button className="btn btn-success" type="submit">Login</button>
+            { userId === 0 ? <button className="btn btn-success" type="submit" disabled>Login</button> : <button className="btn btn-success" type="submit">Login</button>}
+            
         </form>
     )
 
